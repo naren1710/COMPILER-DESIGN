@@ -1,0 +1,34 @@
+%{
+%}
+
+%%
+
+[a-z][a-z.0-9]+ {printf("identifiers.....");}
+.+ {printf(" not a identifiers.....");}
+
+%%
+int yywrap()
+{}
+
+int main()
+{
+printf("enter the input:");
+yylex();
+}
+
+OUTPUT:
+
+C:\Users\RIYAS UDEEN>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\RIYAS UDEEN>flex exp3.l.txt
+
+C:\Users\RIYAS UDEEN>set path=C:\MinGW\bin
+
+C:\Users\RIYAS UDEEN>gcc lex.yy.c
+
+C:\Users\RIYAS UDEEN>a
+enter the input:naren
+identifiers.....
+7
+ not a identifiers.....
+naren12
