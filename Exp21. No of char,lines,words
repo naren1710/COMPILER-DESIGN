@@ -1,0 +1,40 @@
+%{
+int nlines,nwords,nchars;
+%}
+
+%%
+\n {
+	nchars++;nlines++; 
+	}
+
+[^ \n\t]+ {nwords++, nchars=nchars+yyleng;}
+. {nchars++;}
+
+%%
+
+int yywrap(void) {}
+int main() 
+{
+ yylex();
+ printf("Lines = %d\nChars=%d\nWords=%d",nlines,nchars,nwords);
+
+ return 0;
+}
+
+
+OUTPUT:
+
+
+C:\Users\RIYAS UDEEN>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\RIYAS UDEEN>flex noofchar.l.txt
+
+C:\Users\RIYAS UDEEN>set path=C:\MinGW\bin
+
+C:\Users\RIYAS UDEEN>gcc lex.yy.c
+
+C:\Users\RIYAS UDEEN>a
+narenkumar saveetha school of engineering
+Lines = 1
+Chars=42
+Words=5^C
