@@ -1,0 +1,17 @@
+%{
+%}
+
+%%
+
+[a-z.0-9]+@[a-z]+".com"|[a-z.0-9]+@[a-z]+".in" {printf("the email id entered is valid....");}
+.+ {printf("the email id is invalid");}
+
+%%
+int yywrap()
+{}
+
+int main()
+{
+printf("enter email id:");
+yylex();
+}
